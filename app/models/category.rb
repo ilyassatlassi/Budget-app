@@ -1,11 +1,8 @@
 class Category < ApplicationRecord
-    has_many :transactions
     belongs_to :user
+    has_many :categories_transactions
+    has_many :transactions, through: :transaction_categories
   
-    validates :name, presence: true, length: { maximum: 30 }
+    validates :name, presence: true
     validates :icon, presence: true
-  
-    def total_expense
-      transactions.sum(:amount)
-    end
   end
