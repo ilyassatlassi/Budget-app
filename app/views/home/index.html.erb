@@ -1,0 +1,13 @@
+<section class="container">
+<div class="home-page">
+<h1>My Budget</h1>
+
+<% if user_signed_in? %>
+  <%= link_to "Categories",  categories_path, class: "btn btn-primary" %>
+<% else %>
+
+  <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %>
+  <%= link_to "Log In", new_user_session_path, class: "btn btn-secondary" %>
+<% end %>
+</div>
+</section>
