@@ -1,0 +1,13 @@
+<h1><%= @category.name %> Transactions</h1>
+<p>Total Amount: <%= @total_amount %></p>
+
+<ul>
+  <% @transactions.each do |transaction| %>
+    <li>
+      <%= transaction.name %> - <%= transaction.amount %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Add a New Transaction', new_category_transaction_path(@category) %>
+

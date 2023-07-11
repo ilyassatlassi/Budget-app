@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
     before_action :authenticate_user!
   
     def index
-      @categories = current_user.categories.includes(:expenses)
+      @categories = current_user.categories.includes(:transactions)
     end
   
     def new
@@ -19,12 +19,12 @@ class CategoriesController < ApplicationController
       end
     end
   
-    def expenses
+    def transactions
       @category = current_user.categories.find(params[:category_id])
-      @expenses = @category.expenses.order(date: :desc)
-      @total_amount = @expenses.sum(:amount)
+      @transactions = @category.transactions.order(date: :desc)
+      @total_amount = @transactions.sum(:amount)
   
-      render :index, locals: { expenses: @expenses, total_amount: @total_amount }
+      render :index, locals: { transactions: @transactions, total_amount: @total_amount }
     end
   
     private
