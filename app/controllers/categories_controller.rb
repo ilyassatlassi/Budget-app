@@ -18,6 +18,12 @@ class CategoriesController < ApplicationController
         render :new
       end
     end
+
+    def destroy
+      @category = current_user.categories.find(params[:id])
+      @category.destroy
+      redirect_to categories_path, notice: 'Category was successfully deleted.'
+    end
   
     def transactions
       @category = current_user.categories.find(params[:category_id])

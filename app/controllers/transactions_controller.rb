@@ -40,7 +40,7 @@ class TransactionsController < ApplicationController
     @category = current_user.categories.find(params[:category_id])
   end
 
-  def expense_params
-    params.require(:expense).permit(:name, :amount, :category_id)
+  def transaction_params
+    params.require(:transaction).permit(:name, :amount, :category_id)
   end
 end
