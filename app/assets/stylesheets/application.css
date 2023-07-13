@@ -50,6 +50,11 @@
   .login-btn:hover {
     background-color: #2361a8;
   }
+
+  .signup {
+    background-color: #dad7d7;
+    margin-top: 10px;
+  }
   
   .signup:hover {
     background-color: #dad7d7;
@@ -131,6 +136,15 @@
     flex-direction: column;
     align-items: center;
   }
+
+.btn-logout,
+.back {
+  padding: 1rem;
+  font-size: 1.3rem;
+  background: none;
+  border: none;
+  color: #fff;
+}
   
 
 
