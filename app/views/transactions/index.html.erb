@@ -17,7 +17,7 @@
       <ul>
         <li>Name: <%= transaction.name %></li>
         <li>Amount: $<%= sprintf('%.2f', transaction.amount) %></li>
-        <h3><%= button_to 'Delete', category_transaction_path(@category, transaction), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-danger' %></h3>
+        <h3><%= button_to 'Delete', category_transactions_path(@category, transaction), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-danger' %></h3>
       </ul>
     <% end %>
   </div>
