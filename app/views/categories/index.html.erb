@@ -1,4 +1,14 @@
+<section class="container">
+<div class="header">
+  <%= link_to "<i class='fas fa-arrow-left'></i>".html_safe, :back, class: "back" %>
+  <h1>Categories</h1>
+  <%= form_for(current_user, url: destroy_user_session_path, method: :delete, html: { class: "nav-link" }) do |f| %>
+    <%= f.button type: :submit, class: "btn-logout" do %>
+      <%= content_tag :i, "", class: "fa-solid fa-right-from-bracket" %>
+    <% end %>
+  <% end %>
 <h1>Categories</h1>
+
 
 <% @categories.each do |category| %>
   <div class="category-item">
@@ -11,3 +21,5 @@
 <% end %>
 
 <%= link_to 'Add a New Category', new_category_path %>
+
+</section>
