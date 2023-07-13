@@ -1,5 +1,11 @@
-<h2>Log in</h2>
+<section class="signPage">
+<div class="header">
+  <%= link_to "<i class='fas fa-arrow-left'></i>".html_safe, :back, class: "back" %>
+  <h2>Log In</h2>
+  <%= link_to "Next", categories_path, class: "btn" %>
+</div>
 
+<div class="form">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
@@ -17,10 +23,13 @@
       <%= f.label :remember_me %>
     </div>
   <% end %>
-
+  <div class="bottom">
   <div class="actions">
     <%= f.submit "Log in" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+</div>
+</section>
