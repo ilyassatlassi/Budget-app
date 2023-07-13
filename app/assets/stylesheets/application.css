@@ -5,6 +5,15 @@
     margin: 0;
     padding: 0;
   }
+
+  li {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: rgb(109, 109, 109);
+  }
   
   .custom-section {
     width: 100%;
@@ -145,7 +154,86 @@
   border: none;
   color: #fff;
 }
+
+/* .expenses-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    margin: 3%;
+    padding: 4%;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  } */
   
+  .categories li {
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    padding: 5%;
+    margin: 3%;
+  }
+
+  .total {
+    margin: 4%;
+    font-size: 1.3rem;
+  }
+  
+  .msg {
+    color: red;
+    margin: 4%;
+  }
+  
+
+  .addNew {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: green;
+    height: 50px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .addNew a {
+    font-size: 1.3rem;
+    border: 1px solid #fff;
+    width: 90%;
+    background: green;
+  }
+  
+  .btn a:hover {
+    background: #609de3;
+  }
+  
+  .addNew a:hover {
+    background: rgb(18, 190, 18);
+  }
+
+  .addNew {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: green;
+    height: 50px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .addNew a {
+    font-size: 1.3rem;
+    border: 1px solid #fff;
+    width: 90%;
+    background: green;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+    list-style: none;
+  }
 
 
   @media screen and (max-width: 760px) {

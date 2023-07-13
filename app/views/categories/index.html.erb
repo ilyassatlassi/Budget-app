@@ -7,19 +7,28 @@
       <%= content_tag :i, "", class: "fa-solid fa-right-from-bracket" %>
     <% end %>
   <% end %>
-<h1>Categories</h1>
+</div>
 
-
-<% @categories.each do |category| %>
-  <div class="category-item">
-    <h3><%= category.name %></h3>
-    <p>Icon: <%= category.icon %></p>
-    <p>Total Amount: <%= category.total_amount %></p>
-    <%= link_to 'View Transactions', category_transactions_path(category) %>
-    <%= button_to 'Delete', category_path(category), method: :delete, data: { confirm: 'Are you sure you want to delete this category?' } %>
-  </div>
+<% if @categories.any? %>
+  <ul class="categories">
+    <% @categories.each do |category| %>
+      <li class="category">
+      <a href="<%= category_transactions_path(category) %>">
+      <div class="info">
+        <% if category.icon.present? %>
+          <%= raw category.icon %>
+        <% end %>
+        <h3><%= category.name %></h3>
+        <p>$<%= category.transactions.collect(&:amount).sum %></p>
+    </div>
+      </li>
+      </a>
+    <% end %>
+  </ul>
+  <button class="btn addNew"><%= link_to 'Scan', new_category_path %></button>
+<% else %>
+  <p class="msg">No categories found. Click the button below to add a new category.</p>
+  <button class="btn addNew"><%= link_to 'Scan', new_category_path%></button>
 <% end %>
-
-<%= link_to 'Add a New Category', new_category_path %>
 
 </section>
