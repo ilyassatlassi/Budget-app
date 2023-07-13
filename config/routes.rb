@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   end
 
   resources :categories do
-    resources :transactions, only: %i[new create index destroy], on: :member
+    resources :transactions, only: %i[new create index destroy]
   end
 end
+
+# resources :categories do
+#   resources :transactions, only: %i[new create index destroy] # Add `index` action back
+# end

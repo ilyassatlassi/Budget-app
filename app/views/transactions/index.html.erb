@@ -1,13 +1,28 @@
-<h1><%= @category.name %> Transactions</h1>
-<p>Total Amount: <%= @total_amount %></p>
-
-<ul>
-  <% @transactions.each do |transaction| %>
-    <li>
-      <%= transaction.name %> - <%= transaction.amount %>
-    </li>
+<section class="container">
+<div class="header">
+  <%= link_to "<i class='fas fa-arrow-left'></i>".html_safe, categories_path, class: "back" %>
+  <h1>Details</h1>
+  <%= form_for(current_user, url: destroy_user_session_path, method: :delete, html: { class: "nav-link" }) do |f| %>
+    <%= f.button type: :submit, class: "btn-logout logoutBtn" do %>
+      <%= content_tag :i, "", class: "fa-solid fa-right-from-bracket" %>
+    <% end %>
   <% end %>
-</ul>
-
-<%= link_to 'Add a New Transaction', new_category_transaction_path(@category) %>
-
+</div>
+<div class="content">
+<h2>transaction for <%= @category.name %></h2>
+<% if @transactions.any? %>
+  <p class="total">Total Amount: $<%= sprintf('%.2f', @total_amount) %></p>
+  <div class="expenses-card">
+    <% @transactions.each do |transaction| %>
+      <ul>
+        <li>Name: <%= transaction.name %></li>
+        <li>Amount: $<%= sprintf('%.2f', transaction.amount) %></li>
+        <h3><%= button_to 'Delete', category_transaction_path(@category, transaction), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-danger' %></h3>
+      </ul>
+    <% end %>
+  </div>
+<% else %>
+  <p class="msg">No transactions found.</p>
+<% end %>
+</div>
+</section>
