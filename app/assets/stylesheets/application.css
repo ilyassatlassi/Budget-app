@@ -242,6 +242,42 @@
     gap: 10px;
   }
 
+  .transactions-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    margin: 3%;
+    padding: 4%;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+
+  .transactions-card ul li {
+    font-size: 1.2rem;
+    color: #404245;
+    margin: 0 12px 12px 20px;
+  }
+
+  .btn-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: all 0.15s ease-in-out;
+  }
+  
+  .btn-danger:hover {
+    color: #fff;
+    background-color: #c82333;
+    border-color: #bd2130;
+    text-decoration: none;
+  }
+
+  .content h2 {
+    padding: 10px 12px;
+  }
 
   @media screen and (max-width: 760px) {
     h2 {
