@@ -1,5 +1,5 @@
 require 'rails_helper'
-# rubocop:disable Metrics/BlockLength
+
 RSpec.feature 'Categories Index', type: :feature do
   include Devise::Test::IntegrationHelpers
 
