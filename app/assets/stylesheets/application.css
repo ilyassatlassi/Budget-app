@@ -102,13 +102,13 @@
   
   .form,
   .cat-form,
-  .exp-form {
+  .tran-form {
     padding: 1rem;
   }
   
   .form form,
   .cat-form form,
-  .exp-form form {
+  .tran-form form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
