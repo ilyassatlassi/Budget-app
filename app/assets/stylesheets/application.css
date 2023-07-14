@@ -214,7 +214,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: green;
+    background:#5fb523;
     height: 50px;
     display: flex;
     align-items: center;
@@ -222,9 +222,9 @@
   
   .addNew a {
     font-size: 1.3rem;
-    border: 1px solid #fff;
+    border: 1px solid #f6f1f1;
     width: 90%;
-    background: green;
+    background: #5fb523;
   }
 
   .info {
@@ -232,7 +232,14 @@
     flex-direction: row;
     align-items: center;
     gap: 0.6rem;
+    justify-content: space-between;
     list-style: none;
+  }
+
+  .info-name {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
   }
 
 

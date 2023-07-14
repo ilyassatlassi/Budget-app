@@ -15,20 +15,26 @@
       <li class="category">
       <a href="<%= category_transactions_path(category) %>">
       <div class="info">
-        <% if category.icon.present? %>
-          <%= raw category.icon %>
-        <% end %>
-        <h3><%= category.name %></h3>
-        <p>$<%= category.transactions.collect(&:amount).sum %></p>
+        <div class = "info-name">
+            <% if category.icon.present? %>
+<div>
+                  <%= raw category.icon %>
+    
+</div>            <% end %>
+            <h3><%= category.name %></h3>
+        </div>
+        <div class="info-amount">
+            <p>$<%= category.transactions.collect(&:amount).sum %></p>
+        </div>
     </div>
       </li>
       </a>
     <% end %>
   </ul>
-  <button class="btn addNew"><%= link_to 'Scan', new_category_path %></button>
+  <button class="btn addNew"><%= link_to 'Add New', new_category_path %></button>
 <% else %>
   <p class="msg">No categories found. Click the button below to add a new category.</p>
-  <button class="btn addNew"><%= link_to 'Scan', new_category_path%></button>
+  <button class="btn addNew"><%= link_to 'Add New', new_category_path%></button>
 <% end %>
 
 </section>
