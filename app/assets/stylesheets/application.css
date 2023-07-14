@@ -1,0 +1,304 @@
+* {
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(109, 109, 109);
+}
+
+.custom-section {
+  width: 100%;
+  height: 100vh;
+}
+
+.custom-absolute-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 13rem;
+  margin-bottom: 30px;
+}
+
+.custom-flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100vh;
+}
+
+.Welcome,
+.new-category-heading,
+.expense-heading {
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  font-size: 40px;
+}
+
+.auth-button {
+  width: 21rem;
+  height: 4rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.login-btn {
+  background-color: #3778c2;
+  color: #e0dede;
+}
+
+.login-btn:hover {
+  background-color: #2361a8;
+}
+
+.signup {
+  background-color: #dad7d7;
+  margin-top: 10px;
+}
+
+.signup:hover {
+  background-color: #dad7d7;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0.4rem;
+  background: #3778c2;
+  color: aliceblue;
+  gap: 3rem;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+}
+
+.btn {
+  display: flex;
+  flex-direction: row;
+  gap: 1.3rem;
+  border-radius: 5px;
+  justify-content: center;
+}
+
+.header a,
+.header .btn {
+  color: aliceblue;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.form,
+.cat-form,
+.tran-form {
+  padding: 1rem;
+}
+
+.form form,
+.cat-form form,
+.tran-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  align-items: center;
+  width: 100%;
+}
+
+.field,
+.form input[type='text'],
+.form input[type='email'],
+.form input[type='password'],
+.cat-form input,
+.exp-form input,
+select {
+  width: 100%;
+  padding: 0.25rem;
+}
+
+.form input[type='submit'],
+.cat-form input[type='submit'],
+.exp-form input[type='submit'] {
+  padding: 1rem;
+  border-radius: 0.25rem;
+  background-color: #3778c2;
+  color: #fff;
+  min-width: 100px;
+  font-size: 1.3rem;
+  border: none;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-logout,
+.back {
+  padding: 1rem;
+  font-size: 1.3rem;
+  background: none;
+  border: none;
+  color: #fff;
+}
+
+/* .expenses-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    margin: 3%;
+    padding: 4%;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  } */
+
+.categories li {
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  padding: 5%;
+  margin: 3%;
+}
+
+.total {
+  margin: 4%;
+  font-size: 1.3rem;
+}
+
+.msg {
+  color: red;
+  margin: 4%;
+}
+
+.addNew {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: green;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.addNew a {
+  font-size: 1.3rem;
+  border: 1px solid #fff;
+  width: 90%;
+  background: green;
+}
+
+.btn a:hover {
+  background: #609de3;
+}
+
+.addNew a:hover {
+  background: rgb(18, 190, 18);
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.6rem;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.info-name {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.transactions-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin: 3%;
+  padding: 4%;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.transactions-card ul li {
+  font-size: 1.2rem;
+  color: #404245;
+  margin: 0 12px 12px 20px;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-danger:hover {
+  color: #fff;
+  background-color: #c82333;
+  border-color: #bd2130;
+  text-decoration: none;
+}
+
+.content h2 {
+  padding: 10px 12px;
+}
+
+@media screen and (max-width: 760px) {
+  h2 {
+    font-size: 30px;
+  }
+
+  .hamburger {
+    margin-left: 0;
+  }
+
+  .search {
+    margin-right: 0;
+  }
+
+  .custom-nav {
+    height: 9rem;
+  }
+
+  .custom-nav-bottom {
+    margin-left: 130px;
+    gap: 5px;
+  }
+
+  .custom-nav-link {
+    margin-left: 15px;
+    font-size: 14px;
+  }
+
+  .custom-button {
+    display: block;
+    width: 90%;
+    padding: 13px;
+  }
+
+  .button-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+    background-color: #5fb523;
+  }
+}
