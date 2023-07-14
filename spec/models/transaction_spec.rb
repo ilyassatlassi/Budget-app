@@ -40,7 +40,7 @@ RSpec.describe Transaction, type: :model do
 
     it 'has dependent destroy on category' do
       category = Category.create(name: 'Food')
-      transaction = Transaction.create(name: 'Expense', amount: 100, category: category, author: User.new)
+      Transaction.create(name: 'Expense', amount: 100, category:, author: User.new)
       expect { category.reload }.to raise_error(ActiveRecord::RecordNotFound)
     end
   end

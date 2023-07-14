@@ -17,7 +17,7 @@ RSpec.describe Category, type: :model do
     it 'validates length of name' do
       category = Category.new(name: 'a' * 31, icon: 'category-icon')
       expect(category).to_not be_valid
-      expect(category.errors[:name]).to include("is too long (maximum is 30 characters)")
+      expect(category.errors[:name]).to include('is too long (maximum is 30 characters)')
     end
   end
 
@@ -35,13 +35,13 @@ RSpec.describe Category, type: :model do
 
   describe 'methods' do
     let(:user) { User.create(name: 'John', email: 'john@example.com', password: 'password') }
-    let(:category) { Category.create(name: 'Category Name', icon: 'category-icon', user: user) }
+    let(:category) { Category.create(name: 'Category Name', icon: 'category-icon', user:) }
 
     describe '#total_amount' do
       context 'when category has transactions' do
         before do
-          Transaction.create(name: 'Transaction 1', amount: 100, category: category, author: user)
-          Transaction.create(name: 'Transaction 2', amount: 200, category: category, author: user)
+          Transaction.create(name: 'Transaction 1', amount: 100, category:, author: user)
+          Transaction.create(name: 'Transaction 2', amount: 200, category:, author: user)
         end
 
         it 'returns the sum of amounts of all transactions' do

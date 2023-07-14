@@ -31,9 +31,9 @@ RSpec.describe CategoriesController, type: :controller do
         user = User.create(name: 'John', email: 'john@example.com', password: 'password')
         sign_in user
 
-        expect {
+        expect do
           post :create, params: { category: { name: 'Category Name', icon: 'category-icon' } }
-        }.to change(Category, :count).by(1)
+        end.to change(Category, :count).by(1)
 
         expect(response).to redirect_to(categories_path)
         expect(flash[:notice]).to eq('Category was successfully created.')
@@ -45,9 +45,9 @@ RSpec.describe CategoriesController, type: :controller do
         user = User.create(name: 'John', email: 'john@example.com', password: 'password')
         sign_in user
 
-        expect {
+        expect do
           post :create, params: { category: { name: '', icon: 'category-icon' } }
-        }.not_to change(Category, :count)
+        end.not_to change(Category, :count)
 
         expect(response).to render_template(:new)
       end
@@ -60,9 +60,9 @@ RSpec.describe CategoriesController, type: :controller do
       category = user.categories.create(name: 'Category Name', icon: 'category-icon')
       sign_in user
 
-      expect {
+      expect do
         delete :destroy, params: { id: category.id }
-      }.to change(Category, :count).by(-1)
+      end.to change(Category, :count).by(-1)
 
       expect(response).to redirect_to(categories_path)
       expect(flash[:notice]).to eq('Category was successfully deleted.')

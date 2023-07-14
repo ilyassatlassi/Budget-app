@@ -17,7 +17,6 @@ RSpec.describe HomeController, type: :controller do
       it 'redirects to categories path' do
         expect(response).to redirect_to(categories_path)
       end
-      
     end
   end
 end
