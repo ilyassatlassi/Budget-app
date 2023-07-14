@@ -42,4 +42,3 @@ RSpec.feature 'Categories Index', type: :feature do
     expect(page).to have_link('Add New', href: new_category_path)
   end
 end
-# rubocop:disable Metrics/BlockLength
