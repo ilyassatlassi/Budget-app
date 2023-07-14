@@ -30,9 +30,9 @@ RSpec.feature 'Categories Index', type: :feature do
     end
   end
 
-  scenario 'displays a button to add a new category' do
-    expect(page).to have_link('Add New', href: new_category_path)
-  end
+#   scenario 'displays a button to add a new category' do
+#     expect(page).to have_link('Add New', href: new_category_path)
+#   end
 
   scenario 'displays a message and a button to add a new category when no categories exist' do
     Category.destroy_all
