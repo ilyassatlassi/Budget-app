@@ -12,9 +12,9 @@
 <h2>transaction for <%= @category.name %></h2>
 <% if @transactions.any? %>
   <p class="total">Total Amount: $<%= sprintf('%.2f', @total_amount) %></p>
-  <div class="transactions-card">
+  <div >
     <% @transactions.each do |transaction| %>
-      <ul>
+      <ul class="transactions-card">
         <li>Name: <%= transaction.name %></li>
         <li>Amount: $<%= sprintf('%.2f', transaction.amount) %></li>
         <h3><%= button_to 'Delete', category_transaction_path(@category, transaction), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-danger' %></h3>
