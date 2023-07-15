@@ -68,13 +68,13 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo]()
+- [Live Demo](https://budget-u8x9.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 📺 Presentation <a name="presentation"></a>
 
-- [Link to video presentation]()
+- [Link to video presentation](https://www.loom.com/share/7bf8699cb3eb446cbfe88da085e4996b)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
