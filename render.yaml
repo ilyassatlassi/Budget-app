@@ -1,6 +1,6 @@
 databases:
   - name: ilyass
-    databaseName: dbname_vu5q
+    databaseName: ilyass
     user: ilyass
 
 services:
