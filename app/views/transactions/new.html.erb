@@ -1,0 +1,49 @@
+<section class="container">
+<div class="header">
+<%= link_to "<i class='fas fa-arrow-left'></i>".html_safe,  categories_path, class: "back" %>
+<h1>Add Transaction</h1>
+<%= form_for(current_user, url: destroy_user_session_path, method: :delete, html: { class: "nav-link" }) do |f| %>
+  <%= f.button type: :submit, class: "btn-logout" do %>
+    <%= content_tag :i, "", class: "fa-solid fa-right-from-bracket" %>
+  <% end %>
+<% end %>
+
+</div>
+<div class="content">
+<h2>New Transaction for <%= @category.name %></h2>
+<div class="tran-form">
+
+<%= form_with model: [@category, @transaction], local: true do |f| %>
+  <% if @transaction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+      <ul>
+        <% @transaction.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :amount %>
+    <%= f.text_field :amount, required: true %>
+  </div>
+  
+<div class="field">
+  <%= f.label :category_id %>
+  <%= f.select :category_id, options_for_select((@categories&.collect { |c| [c.name, c.id] } || []), @category.id), {}, required: true %>
+</div>
+
+  <div class="actions">
+    <%= f.submit "Create transaction", class: "btn btn-primary" %>
+  </div>
+  </div>
+<% end %>
+</div>
+</section>

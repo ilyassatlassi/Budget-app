@@ -1,0 +1,13 @@
+<%= content_tag :section, class: "custom-section" do %>
+    <% if user_signed_in? %>
+      <%= "categories" %>
+    <% else %>
+      <%= content_tag :div, class: "custom-flex-container" do %>
+        <%= content_tag :h1, "Welcome to BudgetApp", class: "Welcome"%>
+        <%= content_tag :div, class: "custom-absolute-container" do %>
+          <div><%= button_to "Log in", new_user_session_path, method: :get, class: "auth-button login-btn" %>
+          <%= button_to "Sign up", new_user_registration_path, method: :get, class: "auth-button signup" %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>

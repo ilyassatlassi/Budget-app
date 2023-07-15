@@ -1,0 +1,26 @@
+<section class="container">
+<div class="header">
+  <%= link_to "<i class='fas fa-arrow-left'></i>".html_safe, categories_path, class: "back" %>
+  <h1>New Category</h1>
+  <%= form_for(current_user, url: destroy_user_session_path, method: :delete, html: { class: "nav-link" }) do |f| %>
+    <%= f.button type: :submit, class: "btn-logout" do %>
+      <%= content_tag :i, "", class: "fa-solid fa-right-from-bracket" %>
+    <% end %>
+  <% end %>
+</div>
+<div class="cat-form">
+  <%= form_for @category do |f| %>
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name, required: true %>
+    </div>
+    <div class="field">
+      <%= f.label :icon %><br>
+      <%= f.select :icon, { "House": "🏤", "Health": "💊", "Food": "🍕", "clothes": "👕", "School": "📚", "Gym": "🏋️‍♂️" }%>
+    </div>
+    <div class="actions">
+      <%= f.submit "Create Category" %> 
+    </div>
+  <% end %>
+</div>
+</section>
